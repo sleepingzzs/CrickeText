@@ -82,6 +82,10 @@ class AiCricket {
 				score += runs;
 				System.out.println("Your current score: " + score + "\n");
 			}
+			while (mode == 1) {
+				System.out.println("Mode is not available yet!");
+				break;
+			}
 		}
 	}
 }
