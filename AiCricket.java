@@ -34,12 +34,12 @@ class AiCricket {
 			int score = 0;
 			int runs;
 			int mode = obj.nextInt();
-			int randomNumber = random.nextInt((6 - 1) + 1) + 1;
 
 			if (mode != 0 && mode != 1) {
 				System.out.println("Invalid game mode!");
 			}
 			while (mode == 0) {
+				int randomNumber = random.nextInt((10 - 1) + 1) + 1;
 				System.out.println("\n" + "\n");
 				System.out.println(
 					"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
