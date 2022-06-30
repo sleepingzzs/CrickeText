@@ -1,3 +1,9 @@
+/*
+ * Author: bizi
+ * Github: https://github.com/biziV
+ * Description: A text based cricket game against AI made with Java
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -28,30 +34,32 @@ class AiCricket {
 			System.out.println(
 				"|__| |__||_______||_______||_______||_______||_|   |_||_______|        |___|  |_______|      |__| |__||___|       |_______||___|  |_||___| |_______||___| |_||_______|  |___|  "
 			);
-			System.out.println("\n \n \n");
-			System.out.println("Choose game mode! Batting[0] / Balling[1]");
 
 			int score = 0;
+			int ai_score = 0;
 			int runs;
-			int mode = obj.nextInt();
+			int bowls;
+			int mode = 0;
+			int randomNumber;
 
 			if (mode != 0 && mode != 1) {
 				System.out.println("Invalid game mode!");
 			}
 			while (mode == 0) {
-				int randomNumber = random.nextInt((10 - 1) + 1) + 1;
-				System.out.println("\n" + "\n");
+				randomNumber = random.nextInt((6 - 1) + 1) + 1;
+				System.out.println("\n");
 				System.out.println(
 					"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 				);
 				System.out.println(
-					"You are now batting! \nEnter the number of runs from 1 to 6"
+					"You are now BATTING! \nEnter the number of runs from 1 to 6"
 				);
 				System.out.println(
 					"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 				);
 				System.out.print("\nYour runs: ");
 				runs = obj.nextInt();
+
 				if (runs < 1 || runs > 6) {
 					System.out.println("\n" + "\n");
 					System.out.println(
@@ -68,23 +76,108 @@ class AiCricket {
 						"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 					);
 					System.out.println(
-						"Ai's runs: " +
+						"Ai's bowled for: " +
 						randomNumber +
-						"\nYour number: " +
+						"\nYour runs: " +
 						runs +
+						"\nFinal score: " +
+						score +
 						"\nGAME OVER"
 					);
 					System.out.println(
 						"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 					);
-					break;
+					mode = 1;
 				}
 				score += runs;
+				if (score >= 100) {
+					System.out.println(
+						"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+					);
+					System.out.println("Century!");
+					System.out.println(
+						"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+					);
+					mode = 1;
+				}
 				System.out.println("Your current score: " + score + "\n");
 			}
 			while (mode == 1) {
-				System.out.println("Mode is not available yet!");
-				break;
+				randomNumber = random.nextInt((6 - 1) + 1) + 1;
+				System.out.println(
+					"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+				);
+				System.out.println(
+					"You are now BOWLING! \nEnter the number of runs from 1 to 6"
+				);
+				System.out.println(
+					"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+				);
+				System.out.print("Bowl: ");
+				bowls = obj.nextInt();
+
+				if (bowls < 0 || bowls > 6) {
+					System.out.println("\n" + "\n");
+					System.out.println(
+						"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+					);
+					System.out.println("Invalid number \nGAME OVER");
+					System.out.println(
+						"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+					);
+					break;
+				}
+				ai_score += randomNumber;
+				if (bowls == randomNumber) {
+					if (score < ai_score) {
+						System.out.println(
+							"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+						);
+						System.out.println(
+							"AI is out! \nYour final score:" +
+							score +
+							"\nAI's final score: " +
+							ai_score +
+							"\nYOU LOSE!"
+						);
+						System.out.println(
+							"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+						);
+						break;
+					}
+					if (score > ai_score) {
+						System.out.println(
+							"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+						);
+						System.out.println(
+							"AI is out! \nYour final score:" +
+							score +
+							"\nAI's final score: " +
+							ai_score +
+							"\nYOU WIN!"
+						);
+						System.out.println(
+							"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+						);
+						break;
+					}
+					if (score == ai_score) {
+						System.out.println(
+							"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+						);
+						System.out.println(
+							"AI is out! \nYour final score:" +
+							score +
+							"\nAI's final score: " +
+							ai_score +
+							"\nDRAW!"
+						);
+						System.out.println(
+							"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+						);
+						break;
+					}
+				}
 			}
 		}
 	}
