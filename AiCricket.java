@@ -1,7 +1,7 @@
 /*
  * Author: bizi
  * Github: https://github.com/biziV
- * Description: A text based cricket game against AI made with Java
+ * Description: A text based cricket game 
  */
 
 import java.util.Random;
