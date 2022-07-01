@@ -12,6 +12,6 @@ Now download the [.zip file](https://github.com/biziV/AI-Cricket/archive/refs/he
 
 After the zip file is finished downloading, extract the folder.
 
-Now run the play.bat file.
+Run the play.bat file.
 
 enjoy!
