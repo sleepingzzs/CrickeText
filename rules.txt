@@ -1,0 +1,15 @@
+You Will First Bat. Enter Any Number From 1 To 6.
+.
+If The Number Entered By The Computer Is Same As The Number Entered By You,
+You Will Be Declared As Out.
+.
+Your Final Score Will Be The Sum Of The Numbers You Entered Before Getting Out.
+.
+After Getting Out, You Will Have To Bowl.
+.
+Try To Enter A Number Similar To The Number Entered By The Computer.
+.
+If The Sum Of Numbers Entered By The Computer Becomes More Than Your Score, It Will Win.
+.
+But If You Enter A Number Same As The Number Entered By The Computer, You Can Win!
+
