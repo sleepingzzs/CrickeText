@@ -10,7 +10,7 @@ import java.util.Scanner;
 class AiCricket {
 
 	public static void main(String[] args) {
-		try (Scanner obj = new Scanner(System.in)) {
+		Scanner obj = new Scanner(System.in);
 			Random random = new Random();
 
 			System.out.println(
@@ -194,6 +194,7 @@ class AiCricket {
 					break;
 				}
 			}
-		}
+		obj.close();
+		
 	}
 }
