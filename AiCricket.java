@@ -1,6 +1,6 @@
 /*
  * Author: bizi
- * Github: https://github.com/biziV
+ * Github: https://github.com/sleepingzzs
  * Description: A text based cricket game 
  */
 
